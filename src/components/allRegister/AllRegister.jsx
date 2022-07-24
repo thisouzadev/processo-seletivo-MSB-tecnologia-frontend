@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+require("dotenv").config();
 function AllRegister() {
   const [registers, setRegisters] = useState([]); // array de registros
 
   useEffect(() => {
     const getRegisterData = async () => {
-      const { data } = await axios.get("http://localhost:3000/user");
+      const { data } = await axios.get(`${process.env.GET_ALL || "http://localhost:3000/user"}`);
       console.log(data);
       setRegisters(data);
     };
