@@ -41,7 +41,7 @@ function Register () {
     data.append("telefone", telefone);
     data.append("mensagem", mensagem);
     data.append("file", selectedFile);
-    await axios.post(`${process.env.REGISTER || "http://localhost:3000/register"}`, data);
+    await axios.post(`${"https://msb-nodejs-cleardb-heroku.herokuapp.com/register" || "http://localhost:3000/register"}`, data);
   };
   // const setErrorMessage = (message) => {
   //   setError(true);
